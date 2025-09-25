@@ -1,0 +1,6 @@
+{
+  "errorMessage": "An error occurred while loading the page",
+  "@errorMessage": {
+    "description": "Error page message"
+  }
+}
