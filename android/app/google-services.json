@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "557545971829",
+    "firebase_url": "https://eatery-7e66a-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "eatery-7e66a",
+    "storage_bucket": "eatery-7e66a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557545971829:android:c4d9e688c14afef681d83c",
+        "android_client_info": {
+          "package_name": "com.example.exlipt_ai_test_task"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557545971829-48gdg6fs70avktcvcvvq54upnb1nk39j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwmSTQJ1jshGg8yrndX-aV-xCKORCaVbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557545971829-48gdg6fs70avktcvcvvq54upnb1nk39j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "557545971829-9nddgpbji3q6h5ku2pd418qgnsmmqo02.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.exlipt_ai_test_task"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
