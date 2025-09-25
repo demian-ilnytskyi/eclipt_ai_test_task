@@ -38,39 +38,33 @@ class IntroBottomBarWidget extends StatelessWidget {
         routeName = KRoute.login.name;
     }
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: KPadding.kPaddingSize9,
-        vertical: KPadding.kPaddingSize12,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: KPadding.kPaddingSize9),
       child: Row(
         children: [
           const Expanded(child: SizedBox.shrink()),
           Row(spacing: KPadding.kPaddingSize10, children: paginationList),
           Expanded(
-            child: SizedBox(
-              height: 27,
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () => context.goNamed(routeName),
-                  style: const ButtonStyle(
-                    padding: WidgetStatePropertyAll(
-                      EdgeInsets.symmetric(
-                        horizontal: KPadding.kPaddingSize10,
-                        vertical: KPadding.kPaddingSize3,
-                      ),
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () => context.goNamed(routeName),
+                style: const ButtonStyle(
+                  padding: WidgetStatePropertyAll(
+                    EdgeInsets.symmetric(
+                      horizontal: KPadding.kPaddingSize10,
+                      vertical: KPadding.kPaddingSize3,
                     ),
-                    alignment: Alignment.centerRight,
-                    overlayColor: WidgetStatePropertyAll<Color>(
-                      AppColors.lightGrey,
-                    ),
-                    tapTargetSize: MaterialTapTargetSize.padded,
                   ),
-                  child: Text(
-                    context.l10n.next,
-                    style: AppTextStyle.redSmallButton,
-                    textAlign: TextAlign.end,
+                  alignment: Alignment.centerRight,
+                  overlayColor: WidgetStatePropertyAll<Color>(
+                    AppColors.lightGrey,
                   ),
+                  tapTargetSize: MaterialTapTargetSize.padded,
+                ),
+                child: Text(
+                  context.l10n.next,
+                  style: AppTextStyle.redSmallButton,
+                  textAlign: TextAlign.end,
                 ),
               ),
             ),
