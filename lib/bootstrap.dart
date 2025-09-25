@@ -40,6 +40,27 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
     DeviceOrientation.portraitDown,
   ]);
 
+  if (PlatformEnum.getPlatform.isAndroid) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.white,
+        statusBarBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.light,
+        systemNavigationBarColor: Colors.white,
+        systemNavigationBarDividerColor: Colors.white,
+        systemNavigationBarIconBrightness: Brightness.light,
+      ),
+    );
+  } else {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.light,
+        systemNavigationBarIconBrightness: Brightness.light,
+      ),
+    );
+  }
+
   await _asyncGetItRegister();
 
   configureDependencies();

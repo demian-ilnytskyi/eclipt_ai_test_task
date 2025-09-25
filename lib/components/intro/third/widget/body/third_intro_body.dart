@@ -3,19 +3,19 @@ import 'package:exlipt_ai_test_task/components/intro/widget/intro_bottom_bar_wid
 import 'package:exlipt_ai_test_task/shared/shared_flutter.dart';
 import 'package:flutter/material.dart';
 
-class FirstIntroBody extends StatelessWidget {
-  const FirstIntroBody({super.key});
+class ThirdIntroBody extends StatelessWidget {
+  const ThirdIntroBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         IntroBody(
-          title: context.l10n.firstIntroTitle,
-          description: context.l10n.firstIntroDescription,
-          image: KImage.introFirstImage,
+          title: context.l10n.thirdIntroTitle,
+          description: context.l10n.thirdIntroDescription,
+          image: KImage.introThirdImage,
         ),
-        const IntroBottomBarWidget(pageType: IntroType.first),
+        const IntroBottomBarWidget(pageType: IntroType.third),
       ],
     );
   }
