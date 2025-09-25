@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:exlipt_ai_test_task/components/error/view/error_view.dart';
 import 'package:exlipt_ai_test_task/components/home/view/home_view.dart';
-import 'package:exlipt_ai_test_task/components/intro/view/intro_view.dart';
+import 'package:exlipt_ai_test_task/components/intro/first/view/first_intro_view.dart';
 import 'package:exlipt_ai_test_task/shared/shared_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,7 +34,7 @@ GoRouter router = GoRouter(
         key: state.pageKey,
         name: state.name,
         restorationId: state.pageKey.value,
-        child: const IntroScreen(),
+        child: const FirstIntroScreen(),
       ),
     ),
     GoRoute(

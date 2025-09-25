@@ -13,4 +13,6 @@ abstract class KRoute {
   static const _RouteItem login = _RouteItem(path: '/login', name: 'Login');
   static const _RouteItem signUp = _RouteItem(path: '/sign-up', name: 'SignUp');
   static const _RouteItem intro = _RouteItem(path: '/intro', name: 'Intro');
+  static const _RouteItem intro2 = _RouteItem(path: '/2', name: 'Intro Second');
+  static const _RouteItem intro3 = _RouteItem(path: '/3', name: 'Intro Third');
 }

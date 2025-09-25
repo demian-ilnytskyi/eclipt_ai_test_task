@@ -2,8 +2,9 @@ import 'dart:async' show FutureOr;
 import 'dart:developer' show log;
 
 import 'package:bloc/bloc.dart';
+import 'package:exlipt_ai_test_task/shared/constants/enum.dart';
 import 'package:exlipt_ai_test_task/shared/helper/helper.dart';
-import 'package:flutter/material.dart' show Widget, runApp;
+import 'package:flutter/material.dart' show Colors, Widget, runApp;
 import 'package:flutter/services.dart';
 // ignore: depend_on_referenced_packages
 import 'package:get_it/get_it.dart';

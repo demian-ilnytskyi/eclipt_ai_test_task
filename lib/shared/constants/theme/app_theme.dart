@@ -19,7 +19,6 @@ import 'package:flutter/material.dart'
         WidgetState,
         WidgetStateProperty,
         WidgetStatePropertyAll;
-import 'package:google_fonts/google_fonts.dart';
 
 final WidgetStateProperty<MouseCursor?> _buttonMouseCursor =
     WidgetStateProperty.resolveWith((states) {
@@ -40,5 +39,4 @@ ThemeData themeData = ThemeData(
       mouseCursor: _buttonMouseCursor,
     ),
   ),
-  textTheme: GoogleFonts.montserratTextTheme(),
 );

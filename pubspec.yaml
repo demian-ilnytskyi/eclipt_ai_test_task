@@ -28,7 +28,6 @@ dependencies:
   freezed_annotation: ^3.1.0
   get_it: ^8.2.0
   go_router: ^16.2.4
-  google_fonts: ^6.3.2
   injectable: ^2.5.1
   injectable_generator: ^2.8.1 # Used for dependency injection for get_it
   intl: ^0.20.2
@@ -44,3 +43,24 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  # images
+  assets:
+    - assets/images/
+
+  fonts:
+
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Regular.ttf
+          weight: 400
+          style: normal
+        - asset: assets/fonts/Montserrat-SemiBold.ttf
+          weight: 600
+          style: normal
+        - asset: assets/fonts/Montserrat-Bold.ttf
+          weight: 700
+          style: normal
+        - asset: assets/fonts/Montserrat-ExtraBold.ttf
+          weight: 800
+          style: normal
