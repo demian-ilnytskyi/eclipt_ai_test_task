@@ -14,6 +14,11 @@ class FirstIntroBody extends StatelessWidget {
           title: context.l10n.firstIntroTitle,
           description: context.l10n.firstIntroDescription,
           image: KImage.introFirstImage,
+          imagePadding: const EdgeInsets.only(
+            bottom: KPadding.kPaddingSize15,
+            right: KPadding.kPaddingSize20,
+            left: KPadding.kPaddingSize20,
+          ),
         ),
         const IntroBottomBarWidget(pageType: IntroType.first),
       ],

@@ -6,11 +6,13 @@ class IntroBody extends StatelessWidget {
     required this.title,
     required this.description,
     required this.image,
+    required this.imagePadding,
     super.key,
   });
   final String title;
   final String description;
   final Image image;
+  final EdgeInsets imagePadding;
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +25,10 @@ class IntroBody extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              image,
-              KSizedBox.kHeightSizedBox15,
+              SizedBox(
+                width: double.infinity,
+                child: Padding(padding: imagePadding, child: image),
+              ),
               Text(title, style: AppTextStyle.title),
               KSizedBox.kHeightSizedBox10,
               Text(

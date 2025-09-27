@@ -14,6 +14,10 @@ class SecondIntroBody extends StatelessWidget {
           title: context.l10n.secondIntroTitle,
           description: context.l10n.secondIntroDescription,
           image: KImage.introSecondImage,
+          imagePadding: const EdgeInsets.only(
+            bottom: KPadding.kPaddingSize34,
+            top: KPadding.kPaddingSize48,
+          ),
         ),
         const IntroBottomBarWidget(pageType: IntroType.second),
       ],

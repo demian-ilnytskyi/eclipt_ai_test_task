@@ -28,41 +28,37 @@ class IntroBottomBarWidget extends StatelessWidget {
             child: SizedBox(width: KSize.kPixel40, height: KSize.kPixel8),
           ),
         );
-    late String routeName;
-    switch (pageType) {
-      case IntroType.first:
-        routeName = KRoute.intro2.name;
-      case IntroType.second:
-        routeName = KRoute.intro3.name;
-      case IntroType.third:
-        routeName = KRoute.login.name;
-    }
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: KPadding.kPaddingSize9),
       child: Row(
         children: [
-          const Expanded(child: SizedBox.shrink()),
+          Expanded(
+            child: pageType == IntroType.first
+                ? const SizedBox.shrink()
+                : Align(
+                    alignment: Alignment.centerLeft,
+                    child: TextButton(
+                      onPressed: () => popEvent(context),
+                      style: KButtonStyles.introGrey,
+                      child: Text(
+                        context.l10n.prev,
+                        style: AppTextStyle.greySmallButton,
+                        textAlign: TextAlign.end,
+                      ),
+                    ),
+                  ),
+          ),
           Row(spacing: KPadding.kPaddingSize10, children: paginationList),
           Expanded(
             child: Align(
               alignment: Alignment.centerRight,
               child: TextButton(
-                onPressed: () => context.goNamed(routeName),
-                style: const ButtonStyle(
-                  padding: WidgetStatePropertyAll(
-                    EdgeInsets.symmetric(
-                      horizontal: KPadding.kPaddingSize10,
-                      vertical: KPadding.kPaddingSize3,
-                    ),
-                  ),
-                  alignment: Alignment.centerRight,
-                  overlayColor: WidgetStatePropertyAll<Color>(
-                    AppColors.lightGrey,
-                  ),
-                  tapTargetSize: MaterialTapTargetSize.padded,
-                ),
+                onPressed: () => context.goNamed(nextRoute),
+                style: KButtonStyles.introRed,
                 child: Text(
-                  context.l10n.next,
+                  pageType == IntroType.third
+                      ? context.l10n.getStarted
+                      : context.l10n.next,
                   style: AppTextStyle.redSmallButton,
                   textAlign: TextAlign.end,
                 ),
@@ -72,5 +68,26 @@ class IntroBottomBarWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String get nextRoute {
+    switch (pageType) {
+      case IntroType.first:
+        return KRoute.intro2.name;
+      case IntroType.second:
+        return KRoute.intro3.name;
+      case IntroType.third:
+        return KRoute.login.name;
+    }
+  }
+
+  void popEvent(BuildContext context) {
+    if (context.canPop()) {
+      context.pop();
+    } else {
+      context.goNamed(
+        pageType == IntroType.second ? KRoute.intro.name : KRoute.intro2.name,
+      );
+    }
   }
 }

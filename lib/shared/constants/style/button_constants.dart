@@ -16,4 +16,24 @@ abstract class KButtonStyles {
       RoundedRectangleBorder(borderRadius: KBorderRadius.kBorderRadius32),
     ),
   );
+  static const ButtonStyle introRed = ButtonStyle(
+    padding: WidgetStatePropertyAll(
+      EdgeInsets.symmetric(
+        horizontal: KPadding.kPaddingSize10,
+        vertical: KPadding.kPaddingSize3,
+      ),
+    ),
+    alignment: Alignment.centerRight,
+    overlayColor: WidgetStatePropertyAll<Color>(AppColors.lightGrey),
+  );
+  static const ButtonStyle introGrey = ButtonStyle(
+    padding: WidgetStatePropertyAll(
+      EdgeInsets.symmetric(
+        horizontal: KPadding.kPaddingSize10,
+        vertical: KPadding.kPaddingSize3,
+      ),
+    ),
+    alignment: Alignment.centerRight,
+    overlayColor: WidgetStatePropertyAll<Color>(AppColors.lightGrey),
+  );
 }

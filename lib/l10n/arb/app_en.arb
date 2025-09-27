@@ -38,5 +38,13 @@
   "thirdIntroDescription": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
   "@firstIntroDthirdIntroDescriptionescription": {
     "description": "Description for Third Intro Screen"
+  },
+  "prev": "Prev",
+  "@prev": {
+    "description": "Text for previous buttin on the Intro Screens"
+  },
+  "getStarted": "Get Started",
+  "@getStarted": {
+    "description": "Text for last next buttin on the Intro Screens"
   }
 }

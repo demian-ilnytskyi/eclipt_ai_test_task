@@ -14,6 +14,10 @@ class ThirdIntroBody extends StatelessWidget {
           title: context.l10n.thirdIntroTitle,
           description: context.l10n.thirdIntroDescription,
           image: KImage.introThirdImage,
+          imagePadding: const EdgeInsets.only(
+            bottom: KPadding.kPaddingSize51,
+            top: KPadding.kPaddingSize4,
+          ),
         ),
         const IntroBottomBarWidget(pageType: IntroType.third),
       ],
