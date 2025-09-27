@@ -36,4 +36,21 @@ abstract class KButtonStyles {
     alignment: Alignment.centerRight,
     overlayColor: WidgetStatePropertyAll<Color>(AppColors.lightGrey),
   );
+  static const ButtonStyle introSkip = ButtonStyle(
+    padding: WidgetStatePropertyAll(
+      EdgeInsets.symmetric(
+        horizontal: KPadding.kPaddingSize10,
+        vertical: KPadding.kPaddingSize3,
+      ),
+    ),
+    overlayColor: WidgetStatePropertyAll<Color>(AppColors.lightGrey),
+  );
+  static const ButtonStyle authentication = ButtonStyle(
+    padding: WidgetStatePropertyAll(EdgeInsets.all(KPadding.kPaddingSize16)),
+    backgroundColor: WidgetStatePropertyAll(AppColors.red),
+    overlayColor: WidgetStatePropertyAll<Color>(AppColors.lightRed),
+    shape: WidgetStatePropertyAll(
+      RoundedRectangleBorder(borderRadius: KBorderRadius.kBorderRadius4),
+    ),
+  );
 }

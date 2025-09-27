@@ -5,5 +5,11 @@ abstract class KBorderRadius {
   static const kBorderRadius32 = BorderRadius.all(
     Radius.circular(KSize.kRadius32),
   );
+  static const kBorderRadius10 = BorderRadius.all(
+    Radius.circular(KSize.kRadius10),
+  );
+  static const kBorderRadius4 = BorderRadius.all(
+    Radius.circular(KSize.kRadius4),
+  );
   static const kBorderRadius100 = BorderRadius.all(Radius.circular(100));
 }

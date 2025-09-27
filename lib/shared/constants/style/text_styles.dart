@@ -48,9 +48,11 @@ abstract class AppTextStyle {
   static const TextStyle redDescription = TextStyle(
     fontSize: 14,
     height: 1.214,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w600,
     color: AppColors.red,
     fontFamily: 'Montserrat',
+    decoration: TextDecoration.underline,
+    decorationColor: AppColors.red,
   );
   static const TextStyle redButton = TextStyle(
     fontSize: 20,
@@ -59,18 +61,32 @@ abstract class AppTextStyle {
     color: AppColors.white,
     fontFamily: 'Montserrat',
   );
-  static const TextStyle field = TextStyle(
-    fontSize: 20,
-    height: 1.2,
+  static const TextStyle labelField = TextStyle(
+    fontSize: 12,
+    height: 1.25,
     fontWeight: FontWeight.w400,
     color: AppColors.fieldText,
+    fontFamily: 'Montserrat',
+  );
+  static const TextStyle labelText = TextStyle(
+    fontSize: 12,
+    height: 1.25,
+    fontWeight: FontWeight.w400,
+    color: AppColors.black,
+    fontFamily: 'Montserrat',
+  );
+  static const TextStyle errorField = TextStyle(
+    fontSize: 12,
+    height: 1.2,
+    fontWeight: FontWeight.w400,
+    color: AppColors.red,
     fontFamily: 'Montserrat',
   );
   static const TextStyle pageTitle = TextStyle(
     fontSize: 36,
     height: 1.194,
     fontWeight: FontWeight.bold,
-    color: AppColors.fieldText,
+    color: AppColors.black,
     fontFamily: 'Montserrat',
   );
   static const TextStyle whiteTitle = TextStyle(

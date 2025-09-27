@@ -21,24 +21,22 @@ class IntroBody extends StatelessWidget {
         padding: const EdgeInsets.symmetric(
           horizontal: KPadding.kPaddingSize17,
         ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: double.infinity,
-                child: Padding(padding: imagePadding, child: image),
-              ),
-              Text(title, style: AppTextStyle.title),
-              KSizedBox.kHeightSizedBox10,
-              Text(
-                description,
-                style: AppTextStyle.body,
-                textAlign: TextAlign.center,
-              ),
-              KSizedBox.kHeightSizedBox24,
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: double.infinity,
+              child: Padding(padding: imagePadding, child: image),
+            ),
+            Text(title, style: AppTextStyle.title),
+            KSizedBox.kHeightSizedBox10,
+            Text(
+              description,
+              style: AppTextStyle.body,
+              textAlign: TextAlign.center,
+            ),
+            KSizedBox.kHeightSizedBox24,
+          ],
         ),
       ),
     );

@@ -10,8 +10,10 @@ environment:
 dependencies:
   bloc: ^9.0.0
   build_runner: ^2.7.1 # Used for class generation
+  cloud_firestore: ^6.0.2
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
+  email_validator: ^3.0.0
   equatable: ^2.0.7
   firebase_analytics: ^12.0.2
   firebase_auth: ^6.1.0
@@ -33,6 +35,7 @@ dependencies:
   injectable_generator: ^2.8.1 # Used for dependency injection for get_it
   intl: ^0.20.2
   json_serializable: ^6.11.0
+  material_symbols_icons: ^4.2867.0
   shared_preferences: ^2.5.3
 
 dev_dependencies:

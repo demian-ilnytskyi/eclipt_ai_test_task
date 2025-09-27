@@ -11,11 +11,11 @@ targets:
       freezed|freezed:
         generate_for:
           - lib/shared/models/**.dart
-          - lib/components/*/bloc/**.dart
+          - lib/components/**/bloc/**.dart
           - lib/shared/bloc/**.dart
       injectable_generator|injectable_builder:
         generate_for:
-          - lib/components/*/bloc/**.dart
+          - lib/components/**/bloc/**.dart
           - lib/shared/bloc/**.dart
           - lib/shared/data_provider/**.dart
           - lib/shared/helpers/get_it_service_locator.dart

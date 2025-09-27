@@ -21,4 +21,8 @@ abstract class KRoute {
     path: '/payment',
     name: 'Intro Third',
   );
+  static const _RouteItem profile = _RouteItem(
+    path: 'profile',
+    name: 'Profile',
+  );
 }

@@ -1,5 +1,7 @@
+import 'package:exlipt_ai_test_task/components/intro/bloc/intro_cubit.dart';
 import 'package:exlipt_ai_test_task/shared/shared_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class IntroBottomBarWidget extends StatelessWidget {
@@ -21,10 +23,7 @@ class IntroBottomBarWidget extends StatelessWidget {
         ]..insert(
           pageType.value,
           const DecoratedBox(
-            decoration: BoxDecoration(
-              color: AppColors.lightBlack,
-              borderRadius: KBorderRadius.kBorderRadius100,
-            ),
+            decoration: KWidgetTheme.boxDecorationCircular,
             child: SizedBox(width: KSize.kPixel40, height: KSize.kPixel8),
           ),
         );
@@ -53,7 +52,12 @@ class IntroBottomBarWidget extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerRight,
               child: TextButton(
-                onPressed: () => context.goNamed(nextRoute),
+                onPressed: () {
+                  if (pageType == IntroType.third) {
+                    context.read<IntroCubit>().finish();
+                  }
+                  context.goNamed(nextRoute);
+                },
                 style: KButtonStyles.introRed,
                 child: Text(
                   pageType == IntroType.third
@@ -77,7 +81,7 @@ class IntroBottomBarWidget extends StatelessWidget {
       case IntroType.second:
         return KRoute.intro3.name;
       case IntroType.third:
-        return KRoute.login.name;
+        return KRoute.signUp.name;
     }
   }
 

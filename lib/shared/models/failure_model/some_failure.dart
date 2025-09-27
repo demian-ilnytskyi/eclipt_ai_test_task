@@ -43,10 +43,7 @@ enum SomeFailure with _Exception {
   serviceWorkerRegistration,
   unsupported,
   // notFound,
-  setExistData,
-  locationPermisionDenied,
-  backgroundGeofetchingInitError,
-  locationPermissionError;
+  setExistData;
 
   factory SomeFailure.value({
     required Object error,

@@ -236,10 +236,6 @@ mixin _Exception {
               case 'invalid_input':
                 failure = SomeFailure.invalidInput;
                 errorLevelValue = ErrorLevelEnum.error;
-              case 'PermissionHandler.PermissionManager':
-                failure = SomeFailure.locationPermisionDenied;
-                errorLevelValue = ErrorLevelEnum.info;
-
               case 'unknown':
               default:
                 failure = SomeFailure.serverError;

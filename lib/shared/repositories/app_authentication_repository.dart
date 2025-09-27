@@ -11,20 +11,28 @@ import 'package:injectable/injectable.dart';
 @Singleton(as: IAppAuthenticationRepository)
 class AppAuthenticationRepository implements IAppAuthenticationRepository {
   AppAuthenticationRepository({
-    // super.dioClient,
     required firebase_auth.FirebaseAuth firebaseAuth,
     required CacheClient cache,
+    required UserSettingCacheRepository userSettingCacheRepository,
+    required FirestoreService firestoreService,
   }) : _firebaseAuth = firebaseAuth,
+       _firestoreService = firestoreService,
+       _userSettingCacheRepository = userSettingCacheRepository,
        _cache = cache {
     _updateUserBasedOnCache();
+    _updateUserSettingBasedOnCache();
   }
   final firebase_auth.FirebaseAuth _firebaseAuth;
+  final FirestoreService _firestoreService;
   final CacheClient _cache;
+  final UserSettingCacheRepository _userSettingCacheRepository;
 
   /// User cache key.
   /// Should only be used for testing purposes.
   @visibleForTesting
   static const userCacheKey = '__user_cache_key__';
+  @visibleForTesting
+  static const userSettingCacheKey = '__user_setting_cache_key__';
 
   /// Stream of [User] which will emit the current user when
   /// the authentication state changes.
@@ -52,10 +60,32 @@ class AppAuthenticationRepository implements IAppAuthenticationRepository {
     }
   });
 
+  @override
+  Stream<UserSetting> userSetting(String userId) =>
+      _firestoreService.getUserSetting(userId).map((userCredentionalSetting) {
+        _userSettingCacheRepository.updateUserCache(userCredentionalSetting);
+        if (userCredentionalSetting.isNotEmpty) {
+          log('================================================');
+          log('Firebase User Setting Changed');
+          log('Firebase User Setting: $userCredentionalSetting');
+          _cache.write(
+            key: userSettingCacheKey,
+            value: userCredentionalSetting,
+          );
+        } else {
+          log('Firebase User Settting is empty');
+        }
+        return userCredentionalSetting;
+      });
+
   /// Returns the current cached user.
   /// Defaults to [User.empty] if there is no cached user.
   @override
   User get currentUser => _cache.read<User>(key: userCacheKey) ?? User.empty;
+  @override
+  UserSetting get currentUserSetting =>
+      _cache.read<UserSetting>(key: userSettingCacheKey) ??
+      _userSettingCacheRepository.getCacheUserSetting;
 
   /// Signs in with the provided [email] and [password].
   @override
@@ -92,6 +122,9 @@ class AppAuthenticationRepository implements IAppAuthenticationRepository {
   Future<Either<SomeFailure, bool>> logOut() async {
     return eitherFutureHelper(
       () async {
+        await _firebaseAuth.signOut();
+
+        _userSettingCacheRepository.clearUserSettingCache();
         _cache.clear();
         return const Right(true);
       },
@@ -119,7 +152,10 @@ class AppAuthenticationRepository implements IAppAuthenticationRepository {
       className: 'AppAuthenticationRepository',
       data: data,
       user: currentUser,
-      finallyFunction: _updateUserBasedOnCache,
+      finallyFunction: () {
+        _updateUserBasedOnCache();
+        _updateUserSettingBasedOnCache();
+      },
     );
   }
 
@@ -133,12 +169,23 @@ class AppAuthenticationRepository implements IAppAuthenticationRepository {
     log('user is $user', name: 'Cache User', level: 1);
   }
 
+  void _updateUserSettingBasedOnCache() {
+    log('Updating user setting based on cache');
+    final userSetting = currentUserSetting.isEmpty;
+    log(
+      'Current user setting inside '
+      '_updateAuthStatusBasedOnCache : $currentUserSetting',
+    );
+    log('userSertting is $userSetting', name: 'Cache User Setting', level: 1);
+  }
+
   @override
   Future<Either<SomeFailure, bool>> deleteUser() async {
     return eitherFutureHelper(
       () async {
         await _firebaseAuth.currentUser?.delete();
 
+        _userSettingCacheRepository.clearUserSettingCache();
         _cache.clear();
 
         return const Right(true);
@@ -146,6 +193,32 @@ class AppAuthenticationRepository implements IAppAuthenticationRepository {
       methodName: 'deleteUser',
       className: 'AppAuthenticationRepository',
       user: currentUser,
+    );
+  }
+
+  @override
+  Future<Either<SomeFailure, UserSetting>> updateUserSetting(
+    UserSetting userSetting,
+  ) async {
+    return eitherFutureHelper(
+      () async {
+        if (currentUser.isNotEmpty) {
+          await _firestoreService.setUserSetting(
+            userSetting: userSetting.copyWith(
+              createdAt: userSetting.createdAt ?? DateTime.now(),
+              updatedAt: DateTime.now(),
+            ),
+            userId: currentUser.id,
+          );
+          return Right(userSetting);
+        }
+        return Right(userSetting);
+      },
+      methodName: 'updateUserSetting',
+      data: 'User Setting: $userSetting',
+      className: 'AppAuthenticationRepository',
+      user: currentUser,
+      finallyFunction: _updateUserSettingBasedOnCache,
     );
   }
 }

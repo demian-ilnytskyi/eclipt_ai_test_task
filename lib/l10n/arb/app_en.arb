@@ -46,5 +46,244 @@
   "getStarted": "Get Started",
   "@getStarted": {
     "description": "Text for last next buttin on the Intro Screens"
+  },
+  "unkownError": "Unknown error.",
+  "@unkownError": {
+    "description": "General fallback error when no specific description is available"
+  },
+  "serverErrorFailure": "Unknown error.",
+  "@serverErrorFailure": {
+    "description": "Generic error message for server-side issues"
+  },
+  "noSuchMethodErrorFailure": "Unknown error.",
+  "@noSuchMethodErrorFailure": {
+    "description": "Error message when a method is not found"
+  },
+  "typeFailure": "Data type mismatch. Please check the entered values.",
+  "@typeFailure": {
+    "description": "Error message when a data type does not match the expected value in the code"
+  },
+  "assertionFailure": "An error occurred during validation. Please try again.",
+  "@assertionFailure": {
+    "description": "Error message when an assertion fails in the code"
+  },
+  "unimplementedFeatureFailure": "This feature has not been implemented yet.",
+  "@unimplementedFeatureFailure": {
+    "description": "Error message when trying to access an unimplemented feature"
+  },
+  "formatFailure": "Invalid data format. Please check the entered values.",
+  "@formatFailure": {
+    "description": "Error message when the data format is incorrect"
+  },
+  "maxRetriesFailure": "Maximum retry attempts reached. Please try again later.",
+  "@maxRetriesFailure": {
+    "description": "Error message when the maximum number of retries is exceeded"
+  },
+  "loadFileCancelFailure": "File download cancelled.",
+  "@loadFileCancelFailure": {
+    "description": "Error message when a file download is cancelled"
+  },
+  "cancelledFailure": "Operation has been cancelled.",
+  "@cancelledFailure": {
+    "description": "Error message when an operation is cancelled"
+  },
+  "fcmFailure": "Error while loading data. Please reload the page or contact us if the issue persists.",
+  "@fcmFailure": {
+    "description": "Error message when an issue occurs during FCM data retrieval"
+  },
+  "unsupportedError": "An error occurred while performing your action. Please try again or contact support if the issue persists.",
+  "@unsupportedError": {
+    "description": "Error message displayed when a problem occurs during a specific operation, such as modifying a constant list."
+  },
+  "timeoutFailure": "The request timed out. Please try again.",
+  "@timeoutFailure": {
+    "description": "Error message when a timeout occurs"
+  },
+  "getFailure": "An error occurred while loading some data.",
+  "@getFailure": {
+    "description": "error message when trying to download data from firebase"
+  },
+  "sendFailure": "We're sorry, there was an unforeseen error while sending the data. Please try again later.",
+  "@sendFailure": {
+    "description": "error message when trying to send data to firebase"
+  },
+  "networkFailure": "There is no internet connection. Please check your connection.",
+  "@networkFailure": {
+    "description": "error message when connecting to the Internet connection"
+  },
+  "unauthorizedFailure": "You are not authorized. Please check your login credentials.",
+  "@unauthorizedFailure": {
+    "description": "Error message when the user is not authorized to perform the action"
+  },
+  "userNotFoundFailure": "User not found. Please verify your entered data.",
+  "@userNotFoundFailure": {
+    "description": "Error message when no user is found with the provided data"
+  },
+  "userDuplicateFailure": "This user already exists. Please try using a different email address.",
+  "@userDuplicateFailure": {
+    "description": "Error message when the user already exists with the provided email"
+  },
+  "requiresRecentLoginFailure": "Requirement: You need to re-login to proceed.",
+  "@requiresRecentLoginFailure": {
+    "description": "Error message when the system requires a recent login"
+  },
+  "userEmailDuplicateFailure": "This email is already registered. Please try a different one.",
+  "@userEmailDuplicateFailure": {
+    "description": "Error message when the email is already in use"
+  },
+  "tooManyRequestsFailure": "Too many requests. Please try again later.",
+  "@tooManyRequestsFailure": {
+    "description": "Error message when the system detects too many requests in a short time"
+  },
+  "permissionFailure": "You do not have permission to perform this action.",
+  "@permissionFailure": {
+    "description": "Error message when the user lacks permission to execute the operation"
+  },
+  "emailSendingFailedFailure": "Failed to send email. Please try again.",
+  "@emailSendingFailedFailure": {
+    "description": "Error message when email sending fails"
+  },
+  "wrongVerifyCodeFailure": "Invalid verification code.",
+  "@wrongVerifyCodeFailure": {
+    "description": "Error message when the verification code is incorrect"
+  },
+  "invalidInputFailure": "Invalid input. Please check the entered data.",
+  "@invalidInputFailure": {
+    "description": "Error message when the user enters invalid data"
+  },
+  "emailInvalidFormatFailure": "Invalid email format. Please check the entered email.",
+  "@emailInvalidFormatFailure": {
+    "description": "Error message when the email format is incorrect"
+  },
+  "passwordWrongFailure": "Incorrect password.",
+  "@passwordWrongFailure": {
+    "description": "Error message when the password entered by the user is incorrect"
+  },
+  "passwordWeakFailure": "Password is too weak. Please try using a stronger one.",
+  "@passwordWeakFailure": {
+    "description": "Error message when the user's password is too weak"
+  },
+  "userDisableFailure": "Your account has been disabled. Please contact support.",
+  "@userDisableFailure": {
+    "description": "Error message when the user's account is disabled"
+  },
+  "dataNotFoundFailure": "Data not found. Please try again later.",
+  "@dataNotFoundFailure": {
+    "description": "Error message when no data is found"
+  },
+  "wrongIDFailure": "Invalid ID. Please check the entered data.",
+  "@wrongIDFailure": {
+    "description": "Error message when the provided ID is incorrect"
+  },
+  "linkWrongFailure": "Incorrect link. Please check it and try again.",
+  "@linkWrongFailure": {
+    "description": "Error message when the link provided is invalid"
+  },
+  "loggingInWait": "Logging in, please wait...",
+  "@loggingIn": {
+    "description": "Text indicating that the login process is in progress, and the user needs to wait on the Login page"
+  },
+  "signingUpWait": "Signing up, please wait...",
+  "@signingUpWait": {
+    "description": "Text indicating that the sign-up process is in progress, and the user needs to wait on the Sign up email page"
+  },
+  "fieldCannotBeEmpty": "Field cannot be empty",
+  "@fieldCannotBeEmpty": {
+    "description": "Error text for the field if its value is empty."
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Text for fields and error output in them."
+  },
+  "tooShort": "Too short, it must contain at least {number} characters",
+  "@tooShort": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    },
+    "description": "Error text for email and password fields when their value is too short."
+  },
+  "isWrongEmail": "is not properly formatted",
+  "@isWrongEmail": {
+    "description": "Error text for the email field if its value is incorrect."
+  },
+  "password": "Password",
+  "@password": {
+    "description": "The text above the password field and part of the error."
+  },
+  "capitalLetter": "must contain one or more capital letter",
+  "@capitalLetter": {
+    "description": "The error text for the password field if it does not contain any capital letters."
+  },
+  "oneNumber": "must contain one or more number",
+  "@oneNumber": {
+    "description": "Error text for the password field if it contains no digits."
+  },
+  "onlyEnglishLetter": "must contain only English letters or symbols",
+  "@onlyEnglishLetter": {
+    "description": "Error message text for the password field if it contains anything other than symbols or Ukrainian letters."
+  },
+  "createAnAccount": "Create an\naccount",
+  "@createAnAccount": {
+    "description": "Title for Sign Up Screen"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Label for confirm password field"
+  },
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Text for sign up button on the Sign Up Screen"
+  },
+  "iAlreadyHaveAnAccount": "I Already Have an Account",
+  "@iAlreadyHaveAnAccount": {
+    "description": "Description for login button on the Sign Up Screen"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Text for Login button on the Sing Up Screen"
+  },
+  "confirmPasswordInvalid": "not equal to password",
+  "@confirmPasswordInvalid": {
+    "description": "Invlaid text for Confirm Password Field"
+  },
+  "welcomeBack": "Welcome\nBack!",
+  "@welcomeBack": {
+    "description": "Title for Login Screen"
+  },
+  "createAnAccountDescription": "Create An Account",
+  "@createAnAccountDescription": {
+    "description": "Description for sign up button on the Login Screen"
+  },
+  "signUp": "Sign Up",
+  "@signUp": {
+    "description": "Text for Sign Up button on the Loogin Screen"
+  },
+  "logOut": "Log out",
+  "@logOut": {
+    "description": "Text for Log out button on the Home Screen"
+  },
+  "testCompleted": "Test completed",
+  "@testCompleted": {
+    "description": "Title for Home Screen"
+  },
+  "youAreSignedInAs": "You are signed in as:",
+  "yourTextIs": "Your text is:",
+  "setUpAccount": "Set up\naccount",
+  "@setUpAccount": {
+    "description": "Title For Set Up Account Screen"
+  },
+  "enterAnyText": "Enter any text",
+  "@enterAnyText": {
+    "description": "Text for field with user message"
+  },
+  "finish": "Finish",
+  "@finish": {
+    "description": "Complete button for Set Up Screen"
+  },
+  "changesSendInProgress": "Changes are being saved, please wait...",
+  "@changesSendInProgress": {
+    "examples": "Message while changes are being saved."
   }
 }

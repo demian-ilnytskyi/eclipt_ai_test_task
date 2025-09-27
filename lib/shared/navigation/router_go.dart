@@ -1,7 +1,11 @@
 import 'dart:async';
 
+import 'package:exlipt_ai_test_task/components/authentication/login/view/login_view.dart';
+import 'package:exlipt_ai_test_task/components/authentication/profile/view/proflle_view.dart';
+import 'package:exlipt_ai_test_task/components/authentication/sign_up/view/sign_up_view.dart';
 import 'package:exlipt_ai_test_task/components/error/view/error_view.dart';
 import 'package:exlipt_ai_test_task/components/home/view/home_view.dart';
+import 'package:exlipt_ai_test_task/components/intro/bloc/intro_cubit.dart';
 import 'package:exlipt_ai_test_task/components/intro/first/view/first_intro_view.dart';
 import 'package:exlipt_ai_test_task/components/intro/second/view/second_intro_view.dart';
 import 'package:exlipt_ai_test_task/components/intro/third/view/third_intro_view.dart';
@@ -13,8 +17,6 @@ import 'package:go_router/go_router.dart';
 
 part 'redirect_authenticate_guard.dart';
 
-const showedIntroKey = '__show_intro_cache_key__';
-
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
 GoRouter router = GoRouter(
@@ -24,6 +26,7 @@ GoRouter router = GoRouter(
   errorBuilder: (context, state) => const ErrorScreen(),
   refreshListenable: GoRouterRefreshStream(
     GetIt.instance<AuthenticationBloc>().stream,
+    GetIt.instance<UserWatcherBloc>().stream,
   ),
   initialLocation: KRoute.home.path,
   observers: [if (Config.isReleaseMode) FirebaseAnalyticsService.observer],
@@ -31,6 +34,7 @@ GoRouter router = GoRouter(
     GoRoute(
       name: KRoute.intro.name,
       path: KRoute.intro.path,
+      redirect: _authenticationRedirect,
       pageBuilder: (context, state) => NoTransitionPage(
         key: state.pageKey,
         name: state.name,
@@ -60,18 +64,50 @@ GoRouter router = GoRouter(
             ),
           ],
         ),
+        GoRoute(
+          name: KRoute.signUp.name,
+          path: KRoute.signUp.path,
+          pageBuilder: (context, state) => NoTransitionPage(
+            key: state.pageKey,
+            name: state.name,
+            restorationId: state.pageKey.value,
+            child: const SignUpScreen(),
+          ),
+        ),
+        GoRoute(
+          name: KRoute.login.name,
+          path: KRoute.login.path,
+          pageBuilder: (context, state) => NoTransitionPage(
+            key: state.pageKey,
+            name: state.name,
+            restorationId: state.pageKey.value,
+            child: const LoginScreen(),
+          ),
+        ),
       ],
     ),
     GoRoute(
       name: KRoute.home.name,
       path: KRoute.home.path,
-      redirect: _authenticationRedirect,
+      redirect: _unauthenticationRedirect,
       pageBuilder: (context, state) => NoTransitionPage(
         key: state.pageKey,
         name: state.name,
         restorationId: state.pageKey.value,
         child: const HomeScreen(),
       ),
+      routes: [
+        GoRoute(
+          name: KRoute.profile.name,
+          path: KRoute.profile.path,
+          pageBuilder: (context, state) => NoTransitionPage(
+            key: state.pageKey,
+            name: state.name,
+            restorationId: state.pageKey.value,
+            child: const ProfileScreen(),
+          ),
+        ),
+      ],
     ),
   ],
 );
