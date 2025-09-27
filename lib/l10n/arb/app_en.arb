@@ -2,5 +2,49 @@
   "errorMessage": "An error occurred while loading the page",
   "@errorMessage": {
     "description": "Error page message"
+  },
+  "firstIntroTitle": "Choose Products",
+  "@firstIntroTitle": {
+    "description": "Title for First Intro Screen"
+  },
+  "firstIntroDescription": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+  "@firstIntroDescription": {
+    "description": "Description for First Intro Screen"
+  },
+  "errorTitle": "Error",
+  "@errorTitle": {
+    "description": "Title for the Error page"
+  },
+  "next": "Next",
+  "@next": {
+    "description": "Text for the button on the intro screen to move to the next screen"
+  },
+  "skip": "Skip",
+  "@skip": {
+    "description": "Text for the button on the intro screen to skip Intro"
+  },
+  "secondIntroTitle": "Make Payment",
+  "@secondIntroTitle": {
+    "description": "Title for Second Intro Screen"
+  },
+  "secondIntroDescription": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+  "@secondIntroDescription": {
+    "description": "Description for Second Intro Screen"
+  },
+  "thirdIntroTitle": "Get Your Order",
+  "@thirdIntroTitle": {
+    "description": "Title for Third Intro Screen"
+  },
+  "thirdIntroDescription": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.",
+  "@firstIntroDthirdIntroDescriptionescription": {
+    "description": "Description for Third Intro Screen"
+  },
+  "prev": "Prev",
+  "@prev": {
+    "description": "Text for previous buttin on the Intro Screens"
+  },
+  "getStarted": "Get Started",
+  "@getStarted": {
+    "description": "Text for last next buttin on the Intro Screens"
   }
 }

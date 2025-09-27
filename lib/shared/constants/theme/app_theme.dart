@@ -1,3 +1,4 @@
+import 'package:exlipt_ai_test_task/shared/constants/theme/app_colors.dart';
 import 'package:flutter/material.dart'
     show
         AppBar,
@@ -29,8 +30,30 @@ final WidgetStateProperty<MouseCursor?> _buttonMouseCursor =
     });
 
 ThemeData themeData = ThemeData(
+  colorScheme: const ColorScheme(
+    onError: AppColors.red,
+    onSurface: AppColors.grey,
+    primary: AppColors.white,
+    secondary: AppColors.white,
+    surface: AppColors.white,
+    // background: AppColors.materialThemeWhite,
+    error: AppColors.red,
+    onPrimary: AppColors.white,
+    onSecondary: AppColors.white,
+    brightness: Brightness.light,
+  ),
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(mouseCursor: _buttonMouseCursor),
+  ),
+  textTheme: const TextTheme()
+    ..apply(
+      bodyColor: AppColors.black,
+      displayColor: AppColors.black,
+      fontFamily: 'Montserrat',
+    ),
+  useMaterial3: true,
+  buttonTheme: ButtonThemeData(
+    colorScheme: ColorScheme.fromSwatch(backgroundColor: AppColors.white),
   ),
   iconButtonTheme: IconButtonThemeData(
     style: ButtonStyle(

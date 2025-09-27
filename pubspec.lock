@@ -420,7 +420,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_native_splash:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: flutter_native_splash
       sha256: "8321a6d11a8d13977fa780c89de8d257cce3d841eecfb7a4cadffcc4f12d82dc"
@@ -437,6 +437,22 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  formz:
+    dependency: "direct main"
+    description:
+      name: formz
+      sha256: "382c7be452ff76833f9efa0b2333fec3a576393f6d2c7801725bed502f3d40c3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.8.0"
+  freezed:
+    dependency: "direct main"
+    description:
+      name: freezed
+      sha256: "13065f10e135263a4f5a4391b79a8efc5fb8106f8dd555a9e49b750b45393d77"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.3"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -550,7 +566,7 @@ packages:
     source: hosted
     version: "0.20.2"
   intl_utils:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: intl_utils
       sha256: da67ac187b521445d745f7c68e7254c2090f6c3c9081c93cd515480af9e59569
@@ -566,13 +582,21 @@ packages:
     source: hosted
     version: "1.0.5"
   json_annotation:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: json_annotation
       sha256: "1ce844379ca14835a50d2f019a3099f419082cfdd231cd86a142af94dd5c6bb1"
       url: "https://pub.dev"
     source: hosted
     version: "4.9.0"
+  json_serializable:
+    dependency: "direct main"
+    description:
+      name: json_serializable
+      sha256: "33a040668b31b320aafa4822b7b1e177e163fc3c1e835c6750319d4ab23aa6fe"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.11.1"
   leak_tracker:
     dependency: transitive
     description:
@@ -850,6 +874,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.0"
+  source_helper:
+    dependency: transitive
+    description:
+      name: source_helper
+      sha256: "6a3c6cc82073a8797f8c4dc4572146114a39652851c157db37e964d9c7038723"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.8"
   source_span:
     dependency: transitive
     description:
