@@ -1,16 +1,12 @@
-# exlipt_ai_test_task
+# Exlipt Ai Test Task
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+    <img id="Spash Screen" src='assets/read_me/splash_screen.png' width="100%"/>
+    <img id="Intro Screen" src='assets/read_me/onboard_1.png' width="100%"/>
+    <img id="Intro Second Screen" src='assets/read_me/onboard_2.png' width="100%"/>
+    <img id="Intro Third Screen" src='assets/read_me/onboard_3.png' width="100%"/>
+    <img id="Sign In Screen" src='assets/read_me/sign_in.png' width="100%"/>
+    <img id="Sign Up Screen" src='assets/read_me/sign_up.png' width="100%"/>
+    <img id="Set Up Account Screen" src='assets/read_me/set_up_account.png' width="100%"/>
+    <img id="Home Screen" src='assets/read_me/home.png' width="100%"/>
+</p>
