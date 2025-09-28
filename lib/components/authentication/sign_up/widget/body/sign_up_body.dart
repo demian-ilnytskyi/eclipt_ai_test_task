@@ -34,6 +34,7 @@ class SignUpBody extends StatelessWidget {
               ),
               labelText: context.l10n.email,
               prefixIcon: KIcon.person,
+              keyboardType: TextInputType.emailAddress,
               showErrorText: state.formState == SignUpEnum.invalidData,
               errorText: state.email.error.value(context),
             ),

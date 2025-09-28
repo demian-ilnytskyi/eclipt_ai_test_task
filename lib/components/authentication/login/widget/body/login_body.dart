@@ -33,6 +33,7 @@ class LoginBody extends StatelessWidget {
                   context.read<LoginBloc>().add(LoginEvent.emailUpdated(value)),
               labelText: context.l10n.email,
               prefixIcon: KIcon.person,
+              keyboardType: TextInputType.emailAddress,
               showErrorText: state.formState == LoginEnum.invalidData,
               errorText: state.email.error?.value(context),
             ),
