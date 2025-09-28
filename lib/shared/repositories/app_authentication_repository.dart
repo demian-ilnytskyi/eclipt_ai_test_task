@@ -183,6 +183,7 @@ class AppAuthenticationRepository implements IAppAuthenticationRepository {
   Future<Either<SomeFailure, bool>> deleteUser() async {
     return eitherFutureHelper(
       () async {
+        await _firestoreService.deleteUserSetting(userId: currentUser.id);
         await _firebaseAuth.currentUser?.delete();
 
         _userSettingCacheRepository.clearUserSettingCache();

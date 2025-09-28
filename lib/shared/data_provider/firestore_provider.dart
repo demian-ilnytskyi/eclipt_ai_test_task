@@ -55,6 +55,13 @@ class FirestoreService {
         .doc(userId)
         .set(userSettingJson, setMergeOptions);
   }
+
+  Future<void> deleteUserSetting({required String userId}) async {
+    return _db
+        .collection(FirebaseCollectionName.userSettings)
+        .doc(userId)
+        .delete();
+  }
 }
 
 extension _SourceExtension on bool {
