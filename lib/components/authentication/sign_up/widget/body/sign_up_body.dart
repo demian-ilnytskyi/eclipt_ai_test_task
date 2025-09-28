@@ -18,8 +18,9 @@ class SignUpBody extends StatelessWidget {
         left: KPadding.kPaddingSize32,
       ),
       child: BlocBuilder<SignUpBloc, SignUpState>(
-        builder: (context, state) => Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        builder: (context, state) => ListView(
+          physics: const ScrollPhysics(),
+          shrinkWrap: true,
           children: [
             KSizedBox.kHeightSizedBox19,
             Text(
@@ -99,6 +100,7 @@ class SignUpBody extends StatelessWidget {
                 ),
               ),
             ),
+            KSizedBox.kHeightSizedBox21,
           ],
         ),
       ),

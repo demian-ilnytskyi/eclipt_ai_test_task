@@ -90,6 +90,7 @@ class TextFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return RepaintBoundary(
       child: TextField(
+        cursorColor: AppColors.black,
         expands: expands,
         focusNode: focusNode,
         enabled: enabled,

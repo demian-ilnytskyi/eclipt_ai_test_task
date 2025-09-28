@@ -18,8 +18,9 @@ class LoginBody extends StatelessWidget {
         left: KPadding.kPaddingSize32,
       ),
       child: BlocBuilder<LoginBloc, LoginState>(
-        builder: (context, state) => Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        builder: (context, state) => ListView(
+          physics: const ScrollPhysics(),
+          shrinkWrap: true,
           children: [
             KSizedBox.kHeightSizedBox19,
             Text(
@@ -83,6 +84,7 @@ class LoginBody extends StatelessWidget {
                 ),
               ),
             ),
+            KSizedBox.kHeightSizedBox21,
           ],
         ),
       ),

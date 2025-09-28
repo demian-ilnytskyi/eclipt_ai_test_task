@@ -11,7 +11,11 @@ class AppSaffold extends StatelessWidget {
     return ColoredBox(
       color: AppColors.white,
       child: SafeArea(
-        child: Scaffold(appBar: appBar, body: body),
+        child: Scaffold(
+          resizeToAvoidBottomInset: true,
+          appBar: appBar,
+          body: body,
+        ),
       ),
     );
   }

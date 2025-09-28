@@ -60,7 +60,6 @@ abstract class AppTextStyle {
     fontWeight: FontWeight.w600,
     color: AppColors.red,
     fontFamily: 'Montserrat',
-    decoration: TextDecoration.underline,
     decorationColor: AppColors.red,
   );
   static const TextStyle redButton = TextStyle(

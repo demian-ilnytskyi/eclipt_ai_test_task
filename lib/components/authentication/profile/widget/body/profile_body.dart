@@ -17,8 +17,9 @@ class ProfileBody extends StatelessWidget {
           left: KPadding.kPaddingSize32,
         ),
         child: BlocBuilder<ProfileBloc, ProfileState>(
-          builder: (context, state) => Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          builder: (context, state) => ListView(
+            physics: const ScrollPhysics(),
+            shrinkWrap: true,
             children: [
               KSizedBox.kHeightSizedBox19,
               Text(
