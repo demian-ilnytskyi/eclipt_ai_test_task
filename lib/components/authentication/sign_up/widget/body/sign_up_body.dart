@@ -90,7 +90,7 @@ class SignUpBody extends StatelessWidget {
                     ),
                     TextSpan(
                       text: ' ${context.l10n.login}',
-                      style: AppTextStyle.redDescription,
+                      style: AppTextStyle.redUnderlineDescription,
                       mouseCursor: SystemMouseCursors.click,
                       recognizer: TapGestureRecognizer()
                         ..onTap = () => context.goNamed(KRoute.login.name),

@@ -45,6 +45,15 @@ abstract class AppTextStyle {
     color: AppColors.darkGrey,
     fontFamily: 'Montserrat',
   );
+  static const TextStyle redUnderlineDescription = TextStyle(
+    fontSize: 14,
+    height: 1.214,
+    fontWeight: FontWeight.w600,
+    color: AppColors.red,
+    fontFamily: 'Montserrat',
+    decoration: TextDecoration.underline,
+    decorationColor: AppColors.red,
+  );
   static const TextStyle redDescription = TextStyle(
     fontSize: 14,
     height: 1.214,
