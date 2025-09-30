@@ -76,6 +76,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     if (Formz.validate([state.password, state.email])) {
       if (state.password.value != state.confirmPassword.value) {
         emit(state.copyWith(formState: SignUpEnum.invlaidConfirmPassword));
+        return;
       }
       emit(state.copyWith(formState: SignUpEnum.procesing));
       final result = await _authenticationRepository.signUp(
