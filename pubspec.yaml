@@ -39,8 +39,8 @@ dev_dependencies:
     sdk: flutter
   freezed: ^3.2.0               # Code generator
   injectable_generator: ^2.8.1  # Generates injectable code for get_it
-  json_serializable: ^6.11.0    # Code generator for JSON models
   intl_utils: ^2.8.11           # Generates localization files
+  json_serializable: ^6.11.0    # Code generator for JSON models
   very_good_analysis: ^9.0.0
 
 flutter:
